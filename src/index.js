@@ -59,4 +59,44 @@ var myBuick = new Car('Buick', 'Regal');
 myBuick.wheels = Number(myBuick.wheels) - 1;
 console.log(myBuick.wheels);
 console.log(myBuick.model);
+var NCycle = /** @class */ (function () {
+    function NCycle(make, model, wheels) {
+        this.status = 'stopped';
+        this.make = make;
+        this.model = model;
+        this.wheels = wheels;
+    }
+    NCycle.prototype.start = function () {
+        this.status = 'started';
+    };
+    NCycle.prototype.stop = function () {
+        this.status = 'stopped';
+    };
+    NCycle.prototype.print = function (index) {
+        if (index === void 0) { index = 0; }
+        if (!Array.isArray(this.make) && !Array.isArray(this.model)) {
+            console.log("This is a " + this.make + " " + this.model + " NCycle.");
+        }
+        else if (Array.isArray(this.make) &&
+            Array.isArray(this.model) &&
+            this.make.length > index &&
+            this.model.length > index) {
+            console.log("This NCycle has a " + this.make[index] + " " + this.model[index] + " at " + index + ".");
+        }
+        else {
+            console.log('This NCycle was not created properly.');
+        }
+    };
+    NCycle.prototype.printAll = function () {
+        if (Array.isArray(this.make) && Array.isArray(this.model)) {
+            for (var i = 0; i < this.make.length; i++) {
+                console.log("This is a " + this.make[i] + " " + this.model[i] + " NCycle.");
+            }
+        }
+        else {
+            console.log('This NCycle was not created properly.');
+        }
+    };
+    return NCycle;
+}());
 //# sourceMappingURL=index.js.map

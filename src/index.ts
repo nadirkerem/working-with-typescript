@@ -1,5 +1,5 @@
 class Vehicle {
-  status = "stopped";
+  status = 'stopped';
 
   constructor(make, model, wheels) {
     this.make = make;
@@ -7,16 +7,16 @@ class Vehicle {
     this.wheels = wheels;
   }
   start() {
-    this.status = "started";
+    this.status = 'started';
   }
   stop() {
-    this.status = "stopped";
+    this.status = 'stopped';
   }
 }
 
 class Car extends Vehicle {
   constructor(make, model) {
-    super(make, model, "four");
+    super(make, model, 'four');
   }
 }
 
@@ -27,19 +27,19 @@ class MotorCycle extends Vehicle {
 }
 
 function printStatus(vehicle) {
-  if (vehicle.status === "running") {
-    console.log("The vehicle is running.");
+  if (vehicle.status === 'running') {
+    console.log('The vehicle is running.');
   } else {
-    console.log("The vehicle is stopped.");
+    console.log('The vehicle is stopped.');
   }
 }
 
-const myHarley = new MotorCycle("Harley-Davidson", "Low Rider S");
+const myHarley = new MotorCycle('Harley-Davidson', 'Low Rider S');
 myHarley.start();
 printStatus(myHarley);
 console.log(myHarley.make.toUppercase());
 
-const myBuick = new Car("Buick", "Regal");
+const myBuick = new Car('Buick', 'Regal');
 myBuick.wheels = myBuick.wheels - 1;
 console.log(myBuick.wheels);
 console.log(myBuick.mdl);
